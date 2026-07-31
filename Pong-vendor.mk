@@ -1038,6 +1038,7 @@ PRODUCT_PACKAGES += \
     lib_lvacfs \
     libaacvibrator \
     libadm \
+    libadreno_app_profiles \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
@@ -1635,6 +1636,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.qesdhal@1.0 \
     vendor.qti.qesdhal@1.1-impl \
     vendor.qti.qesdhal@1.1 \
+    vendor.qti.qspmhal@1.0_vendor \
     vendor.qti.qesdsys-V1-ndk_platform \
     vendor_lib_rfsa_adsp_bm2n00_bin \
     vendor_lib_rfsa_adsp_bm2n01_bin \

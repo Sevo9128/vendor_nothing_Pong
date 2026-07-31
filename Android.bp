@@ -8563,7 +8563,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "eglSubDriverAndroid",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8606,7 +8606,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libEGL_adreno",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8636,7 +8636,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libGLESv1_CM_adreno",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8665,7 +8665,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libGLESv2_adreno",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8696,7 +8696,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libVkLayer_ADRENO_qprofiler",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8722,7 +8722,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libq3dtools_adreno",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -8750,7 +8750,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libq3dtools_esx",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -9750,7 +9750,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "vulkan.adreno",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -10157,7 +10157,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libCB",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -10397,7 +10397,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libOpenCL",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -11044,8 +11044,41 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libadreno_app_profiles",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libadreno_app_profiles.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libhardware",
+                "libutils",
+                "libhidlbase",
+                "libhidlmemory",
+                "android.hidl.memory@1.0",
+                "vendor.qti.qspmhal@1.0_vendor",
+                "libdl",
+                "libz",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libadreno_utils",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -14678,7 +14711,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libgpudataproducer",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -14729,7 +14762,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libgsl",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -15360,7 +15393,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libkcl",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -15384,7 +15417,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libkernelmanager",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -15559,7 +15592,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libllvm-glnext",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -15585,7 +15618,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libllvm-qcom",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -15609,7 +15642,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libllvm-qgl",
-    owner: "nothing",
+    owner: "qcom",
     strip: {
         none: true,
     },
@@ -28795,6 +28828,35 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qspmhal@1.0_vendor",
+    stem: "vendor.qti.qspmhal@1.0",
+    owner: "qcom",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.qti.qspmhal@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
                 "libc++",
                 "libc",
                 "libm",
